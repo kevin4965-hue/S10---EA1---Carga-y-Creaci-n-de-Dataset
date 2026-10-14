@@ -1,0 +1,52 @@
+RESUMEN DEL DATASET: scikit-learn/iris (transformado)
+Generado: 2026-10-14 17:30:33
+======================================================================
+
+1. DIMENSIONES
+----------------------------------------------------------------------
+Filas: 118
+Columnas: 6
+
+2. COLUMNAS: TIPOS, NULOS Y VALORES ÚNICOS
+----------------------------------------------------------------------
+                     tipo  nulos  % nulos  valores_unicos
+columna                                                  
+largo_sepalo_cm   float64      0      0.0              27
+ancho_sepalo_cm   float64      0      0.0              22
+largo_petalo_cm   float64      0      0.0              40
+ancho_petalo_cm   float64      0      0.0              21
+especie          category      0      0.0               3
+area_petalo_cm2   float64      0      0.0              90
+
+3. VALORES NULOS
+----------------------------------------------------------------------
+No hay valores nulos en el DataFrame.
+
+4. ESTADÍSTICAS DESCRIPTIVAS (NUMÉRICAS)
+----------------------------------------------------------------------
+       largo_sepalo_cm  ancho_sepalo_cm  largo_petalo_cm  ancho_petalo_cm  area_petalo_cm2
+count          118.000          118.000          118.000          118.000          118.000
+mean             6.130            3.048            4.315            1.432            7.139
+std              0.688            0.445            1.529            0.672            4.370
+min              5.100            2.200            1.200            0.100            0.150
+25%              5.600            2.800            3.925            1.200            4.680
+50%              6.100            3.000            4.700            1.500            6.750
+75%              6.575            3.300            5.375            1.900           10.350
+max              7.900            4.400            6.900            2.500           15.870
+
+5. FRECUENCIAS (CATEGÓRICAS)
+----------------------------------------------------------------------
+[especie]
+especie
+virginica     49
+versicolor    47
+setosa        22
+
+6. PRIMERAS 5 FILAS
+----------------------------------------------------------------------
+   largo_sepalo_cm  ancho_sepalo_cm  largo_petalo_cm  ancho_petalo_cm especie  area_petalo_cm2
+0              5.1              3.5              1.4              0.2  setosa             0.28
+1              5.4              3.9              1.7              0.4  setosa             0.68
+2              5.4              3.7              1.5              0.2  setosa             0.30
+3              5.8              4.0              1.2              0.2  setosa             0.24
+4              5.7              4.4              1.5              0.4  setosa             0.60
