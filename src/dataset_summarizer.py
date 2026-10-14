@@ -33,8 +33,7 @@ class DatasetSummarizer:
             "% nulos": (self.df.isnull().mean() * 100).round(2),
             "valores_unicos": self.df.nunique(),
         })
-        tabla.index.name = "columna"
-        return tabla.to_string()
+        return tabla.rename_axis("columna").to_string()
 
     def nulls_info(self):
         """Indica si hay valores nulos y en qué columnas."""
