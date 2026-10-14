@@ -1,3 +1,6 @@
 pandas
 datasets
 jupyter
+# opcionales: solo para guardar en parquet o xlsx
+pyarrow
+openpyxl
