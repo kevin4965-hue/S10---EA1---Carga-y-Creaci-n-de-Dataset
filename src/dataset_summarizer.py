@@ -43,6 +43,13 @@ class DatasetSummarizer:
         columnas = self.df.columns[self.df.isnull().any()].tolist()
         return f"Total de valores nulos: {total}\nColumnas con nulos: {', '.join(columnas)}"
 
+    def duplicates_info(self):
+        """Cantidad de filas duplicadas (todas las columnas iguales)."""
+        duplicadas = int(self.df.duplicated().sum())
+        if duplicadas == 0:
+            return "No hay filas duplicadas."
+        return f"Filas duplicadas: {duplicadas} ({duplicadas / len(self.df):.2%} del total)"
+
     def numeric_stats(self):
         """Estadísticas descriptivas de las columnas numéricas."""
         numericas = self.df.select_dtypes(include="number")
@@ -67,9 +74,10 @@ class DatasetSummarizer:
             ("1. DIMENSIONES", self.dimensions()),
             ("2. COLUMNAS: TIPOS, NULOS Y VALORES ÚNICOS", self.columns_info()),
             ("3. VALORES NULOS", self.nulls_info()),
-            ("4. ESTADÍSTICAS DESCRIPTIVAS (NUMÉRICAS)", self.numeric_stats()),
-            ("5. FRECUENCIAS (CATEGÓRICAS)", self.categorical_stats()),
-            ("6. PRIMERAS 5 FILAS", self.df.head().to_string()),
+            ("4. FILAS DUPLICADAS", self.duplicates_info()),
+            ("5. ESTADÍSTICAS DESCRIPTIVAS (NUMÉRICAS)", self.numeric_stats()),
+            ("6. FRECUENCIAS (CATEGÓRICAS)", self.categorical_stats()),
+            ("7. PRIMERAS 5 FILAS", self.df.head().to_string()),
         ]
         encabezado = (
             f"RESUMEN DEL DATASET: {self.nombre}\n"
